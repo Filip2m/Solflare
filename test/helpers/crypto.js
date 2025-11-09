@@ -5,4 +5,4 @@ class Crypto {
         return pass
     }
 }
-module.exports = new Crypto()
+export default new Crypto()

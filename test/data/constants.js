@@ -1,0 +1,5 @@
+export const REQ_ADRESS = "HuiTegTpNAU7EJXvn95HKEWBdFMtWZYko4yoFVQyCKUS"
+export const NETWORK_DEVNET = "devnet"
+export const NETWORK_MAINNET = "mainnet"
+export const NETWORK_TESTNET = "testnet"
+export const AUTH_TOKEN = "735c6627-2d92-406a-b4f7-7fe1e19d8f4e"

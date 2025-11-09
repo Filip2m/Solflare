@@ -1,5 +1,5 @@
-const { $, expect } = require('@wdio/globals')
-const Page = require('./page')
+//import { $, expect } from '@wdio/globals'
+import Page from './page.js'
 
 class Home extends Page {
 
@@ -83,4 +83,4 @@ class Home extends Page {
     }
 }
 
-module.exports = new Home()
+export default new Home()

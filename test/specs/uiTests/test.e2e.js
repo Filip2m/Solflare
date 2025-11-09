@@ -1,6 +1,5 @@
-const { expect } = require('@wdio/globals')
-const OnBoard = require('../../pageobjects/onboard.page')
-const Home = require('../../pageobjects/home.page')
+import OnBoard from '../../pageobjects/onboard.page.js'
+import Home from '../../pageobjects/home.page.js'
 
 describe('OnBoard', () => {
     it('Should copy and paste phrase and create new wallet', async () => {

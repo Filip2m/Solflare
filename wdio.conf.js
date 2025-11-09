@@ -1,5 +1,5 @@
-const log = require('./logger')
-
+//const log = require('./logger')
+import log from './logger.js'
 const browserName = process.env.BROWSER.toLowerCase().trim() || 'all'
 
 const allCapabilities = {
@@ -22,7 +22,7 @@ if(browserName === 'all'){
 export const config = {
     runner: 'local',
 
-    specs: ['./test/specs/**/*.js'],
+    specs: ['./test/specs/uiTests/**/*.js'],
     exclude: [],
 
     maxInstances: 10,

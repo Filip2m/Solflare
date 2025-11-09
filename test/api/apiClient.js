@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 const baseURL = "https://wallet-api.solflare.com"
 
@@ -10,4 +10,4 @@ const api = axios.create({
     }
 })
 
-module.exports = api
+export default api

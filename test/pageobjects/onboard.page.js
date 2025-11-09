@@ -1,6 +1,5 @@
-const { $, expect, browser } = require('@wdio/globals')
-const Page = require('./page')
-const Crypto = require('../helpers/crypto')
+import Page from './page.js'
+import Crypto from '../helpers/crypto.js'
 
 class OnBoard extends Page {
     /**
@@ -82,56 +81,9 @@ class OnBoard extends Page {
         await this.click(this.agreeLetsGoButton)
     }
 
-    /**
-     * expect(this.recoveryPhraseItem.$(`div[data-testid="list-item-m-title"]`)).toHaveText('Main Wallet')
-     * Nested because of data-testid redundancy. 
-     * This way I make sure that I only collect elements with data-testid="list-item-m-title" 
-     * from wallet list and not from whole page.
-     * Makes false positive test less likely.
-     * I could not use data-testid="li-wallets-7kXkEcPedTVHWLnHcEsHPAm5JKG4xyPnB2ASub4jBZcY" 
-     * because of wallet id that I do not have acces to. In real world scenario I would probably get
-     * that id trough api (I would get all wallets for logged in user and locate them all in UI to verify they exist)
-     */
-    /* async confirmMainWalletExists () {
-        expect(this.portfolioTitle.isDisplayed())
-        await this.click(this.waletPicker.$(`span`))
-        await expect(this.recoveryPhraseItem.$(`div[data-testid="list-item-m-title"]`)).toHaveText('Main Wallet')
-        //As there might be multiple wallets, we need to make sure we check all of them 
-        const wallets = this.recoveryPhraseItem.$$(`div[data-testid="list-item-m-title"]`)
-        const walletTexts = await wallets.map(w => w.getText())
-        expect(walletTexts.some(w => w === 'Main Wallet')).toBe(true)
-    }
-
-    async manageRecoveryPhraseAddNewWallet () {
-        if(! await this.addWalletButton.isDisplayed()) {
-            expect(this.portfolioTitle.isDisplayed())
-            await this.click(this.waletPicker.$(`span`))
-        }
-        await this.addWalletButton.click()
-        expect(this.manageRecoveryPhaseOption.isDisplayed())
-        this.manageRecoveryPhaseOption.click()
-        const firstSwitch = await this.getRecoverySwitcheByIndex(0)
-        await expect(firstSwitch).toHaveAttribute("data-disabled")
-        await expect(firstSwitch).toHaveAttribute("disabled")
-        await expect(firstSwitch).toHaveAttribute("aria-checked", "true")
-        const thirdSwitch = await this.getRecoverySwitcheByIndex(2)
-        const forthSwitch = await this.getRecoverySwitcheByIndex(3)
-        await thirdSwitch.click()
-        await forthSwitch.click()
-        await expect(thirdSwitch).toHaveAttribute("aria-checked", "true")
-        await expect(forthSwitch).toHaveAttribute("aria-checked", "true")
-        await this.saveNewWalletButton.click()
-        const wallets = this.recoveryPhraseItem.$$(`div[data-testid="list-item-m-title"]`)
-        await expect(wallets).toBeElementsArrayOfSize(3)
-        const walletTexts = await wallets.map(w => w.getText())
-        expect(walletTexts.some(w => w === 'Main Wallet')).toBe(true)
-        expect(walletTexts.some(w => w === 'Wallet 2')).toBe(true)
-        expect(walletTexts.some(w => w === 'Wallet 3')).toBe(true)
-    } */
-
-    open () {
-        return super.open('onboard')
+    async open () {
+        return await super.open('onboard')
     }
 }
 
-module.exports = new OnBoard()
+export default new OnBoard()

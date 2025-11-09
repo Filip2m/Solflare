@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = require('path')
+import { appendFileSync } from 'fs'
+import { join } from 'path'
 /**
  * Here we can add configuration to log every step in log file
  * I usualy create new dir for each test run and each test logs and screenshots
@@ -7,10 +7,10 @@ const path = require('path')
  * That way it is easy to debug if test fails (screenshot + logged steps) or
  * in case of regression testing, logged files can be used as proof of test run
  */
-const file = path.join(__dirname, 'solflareLog.log')
+const file = join(__dirname, 'solflareLog.log')
 
 function log (message) {
     console.log(message)
-    fs.appendFileSync(file, message + "\n", 'utf-8')
+    appendFileSync(file, message + "\n", 'utf-8')
 }
-module.exports = log
+export default log
