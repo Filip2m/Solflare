@@ -1,0 +1,4 @@
+{
+    "mochaExplorer.require": "js-node/register",
+    "mochaExplorer.files": "../specs/ui/**/*.js"
+}
