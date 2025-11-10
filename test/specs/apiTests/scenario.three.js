@@ -2,9 +2,7 @@ import { expect } from 'chai'
 import  getTokens  from '../../api/apiTokens.js'
 import {REQ_ADRESS, NETWORK_DEVNET, AUTH_TOKEN, NETWORK_MAINNET, NETWORK_TESTNET} from '../../data/constants.js'
 
-let response;
-let tokens;
-let responseStatus;
+let response
 
 describe('Break the API', function () {
 
@@ -49,7 +47,7 @@ describe('Break the API', function () {
     })
 
     /**
-     * Sending empty token (or any namber of spaces) results in 200 which is mayor issue!!!
+     * Sending empty token (or any namber of spaces) results in 200 which is major issue!!!
      * Explanation: Adding key Authorization but providing no value
      * It can be tested in postman but you can not use Authorization tab, authorization
      * must be added as header and value must be left empty (or add any number of spaces). 

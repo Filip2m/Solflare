@@ -1,10 +1,10 @@
-import { expect } from 'chai';
-import  getTokens  from '../../api/apiTokens.js';
+import { expect } from 'chai'
+import  getTokens  from '../../api/apiTokens.js'
 import {REQ_ADRESS, NETWORK_DEVNET, AUTH_TOKEN} from '../../data/constants.js'
 
-let response;
-let tokens;
-let responseStatus;
+let response
+let tokens
+let responseStatus
 
 describe('Devnet token validation', function () {
     this.beforeAll(async function () {

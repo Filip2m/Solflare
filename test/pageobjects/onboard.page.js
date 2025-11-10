@@ -32,14 +32,6 @@ class OnBoard extends Page {
     get agreeLetsGoButton () {
         return $(`button[data-testid="btn-explore"]`)
     }
-
-    /**
-     * Next selector is to show That we can use element text for getting elements
-     * but this way we do not cover multilingual pages.
-     * When we are testing pages that are multilingual, we can use translate files
-     * and add translated text programatically, but then we can not use getter method, 
-     * for selectors as getter method in js does not allow parameters
-     */
     
     async navigateToRecoveryPhrases() {
         await expect(await this.iNeedNewWalletButton.isDisplayed())

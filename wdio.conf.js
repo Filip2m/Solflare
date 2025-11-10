@@ -1,6 +1,6 @@
 //const log = require('./logger')
 import log from './logger.js'
-const browserName = process.env.BROWSER.toLowerCase().trim() || 'all'
+const browserName = process.env.BROWSER?.toLowerCase().trim() || 'all'
 
 const allCapabilities = {
     chrome: { browserName: 'chrome' },
